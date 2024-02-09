@@ -4,7 +4,7 @@ function getSuspender(promise){
 
     const suspender = promise.then(
         (res) => {
-            status = "succes";
+            status = "success";
             response = res;
         },
         (err) => {
@@ -25,9 +25,10 @@ function getSuspender(promise){
     return { read };
 }
 
-export function fetchData(url) {
+export function FetchData(url) {
     const promise = fetch(url)
         .then((response) => response.json())
         .then((data) => data);
-    return getSuspender(promise);
+
+       return getSuspender(promise);
 }
