@@ -21,8 +21,10 @@ function getSuspender(promise){
             default:
                 return response;
         }
+        
     }
     return { read };
+    
 }
 
 export function FetchData(url) {
