@@ -2,7 +2,7 @@ import './App.css';
 import { FetchData } from './fetchData';
 import { Suspense } from 'react';
 
-const apiData = FetchData('http://127.0.0.1:8000/api/v1/programers/');
+const apiData = FetchData('https://danit.pythonanywhere.com/api/v1/programers/');
 
 function App() {
   const data = apiData.read();
@@ -17,6 +17,7 @@ function App() {
             {data?.map((user) => (
               
               <li key={user.id}>{user.fullname} edad {user.age} años</li>
+              
             ))}
           </ul>
         </Suspense>
