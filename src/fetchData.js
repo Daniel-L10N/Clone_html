@@ -7,7 +7,7 @@ function getSuspender(promise){
             status = "success";
             response = res;
         },
-        (err) => {
+        (err) => {//y para que existe el catch entonces?
             status = "error";
             response = err;
         }
@@ -32,5 +32,5 @@ export function FetchData(url) {
         .then((response) => response.json())
         .then((data) => data);
 
-       return getSuspender(promise);
+       return getSuspender(promise); //no entiendo pq la capa extra de suspender
 }
