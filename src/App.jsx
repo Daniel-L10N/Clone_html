@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import './App.css';
 // import { FetchData } from './fetchData';
-import { Suspense } from 'react';
-import { useState } from 'react';
+
+
 
 // const apiData = FetchData('https://danit.pythonanywhere.com/api/v1/programers/');
 
@@ -10,10 +10,10 @@ function App() {
   const [data,setData] = useState([]);
   useEffect(() => {
     fetch('https://danit.pythonanywhere.com/api/v1/programers/')
-      .then((res) =>  res.json().then(data => setData(data)));        
+      .then((res) =>  res.json().then(data => setData(data)));
   }, [])
-  return (//utiliza tailwind 
-    
+  return (//utiliza tailwindcss
+
 
     <div className='App'> 
       <h1>Fetch de datos</h1>
