@@ -1,0 +1,37 @@
+
+.tw-folowCard{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 1rem;
+    justify-content: space-between;
+  }
+  .tw-folowCard-header{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .tw-folowCard-info{
+    display: flex;
+    flex-direction: column;
+  }
+  .tw-folowCard-infoUserName{
+    opacity: .6;
+  }
+  .tw-folowCard-avatar{
+    width: 48px;
+    height: 48px;
+    font-size: .6rem;
+    border-radius: 1000px;
+  }
+  .tw-aside{
+    margin-left: -.5rem;
+    margin-top: -.7rem;
+  }
+  .tw-folowCard-button{
+    margin-left: 16px;
+    border: 0;
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-weight: bold;
+  }

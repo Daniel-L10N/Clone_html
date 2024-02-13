@@ -1,37 +1,38 @@
 import { useEffect, useState, Suspense } from 'react';
-import './App.css';
-// import { FetchData } from './fetchData';
 
-
-
-// const apiData = FetchData('https://danit.pythonanywhere.com/api/v1/programers/');
+import './app.css';
+import { TwFolowCard } from './components/Twitter_folowCard/Twitter_folowCard';
 
 function App() {
   const [data,setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     fetch('https://danit.pythonanywhere.com/api/v1/programers/')
-      .then((res) =>  res.json().then(data => setData(data)));
+      .then((res) => res.json())
+      .then(data => {
+        setData(data);
+        setLoading(false);
+      });
   }, [])
-  return (//utiliza tailwindcss
 
-
+  return (
     <div className='App'> 
       <h1>Fetch de datos</h1>
-        
-      <Suspense fallback={<div>Loading...</div>} >
-        <ul className='card'>
-          {data?.map((user) => (
+      <Suspense >
+        {loading ? (
+          <div className='loading'></div>
+        ) : (
+          <div className='card'>
+            {data.map((user) => (
+              <TwFolowCard key={user.id} userName={user.nickname} name={user.fullname} src={user.image} isFolowing={true} ></TwFolowCard>
               
-            <li key={user.id}>{user.fullname} edad {user.age} años</li>
-              
-          ))}
-        </ul>
+            ))}
+          </div>
+        )}
       </Suspense>
     </div>
-      
-
   )
 }
 
 export default App;
-
